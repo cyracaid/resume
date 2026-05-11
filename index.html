@@ -514,6 +514,13 @@
     opacity: 0.5;
   }
   .honor-item strong { color: var(--text); font-weight: 500; }
+  .honor-item a strong { color: var(--accent); }
+  .honor-item a:hover strong { color: var(--accent-hover); }
+  .honor-item a::after {
+    content: ' ↗';
+    font-size: 10px;
+    opacity: 0.6;
+  }
 
   /* GitHub Repos */
   .repo-grid {
