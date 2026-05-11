@@ -215,13 +215,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 6px;
+    gap: 10px;
     font-size: 12px;
     color: var(--text-muted);
     flex-wrap: wrap;
   }
-  .hero-links a { color: var(--text-muted); }
+  .hero-links a { color: var(--text-muted); display: inline-flex; align-items: center; }
   .hero-links a:hover { color: var(--accent); }
+  .hero-links a svg { transition: transform 0.2s; }
+  .hero-links a:hover svg { transform: scale(1.2); }
   .hero-links .sep { color: var(--text-dim); font-size: 10px; }
   .hero-summary {
     max-width: 620px;
@@ -345,6 +347,21 @@
     font-weight: 450;
     margin: 2px 0 6px;
   }
+  .repo-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--accent-cool);
+    background: rgba(125, 151, 163, 0.08);
+    border: 0.5px solid rgba(125, 151, 163, 0.2);
+    border-radius: 4px;
+    padding: 1px 7px;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    transition: all 0.2s;
+    vertical-align: middle;
+  }
+  .repo-badge:hover { background: rgba(125, 151, 163, 0.15); color: var(--accent-cool); text-decoration: none; }
   .entry-bullets { padding-left: 16px; }
   .entry-bullets li {
     font-size: 12.5px;
@@ -628,7 +645,7 @@
     <span class="nav-logo">CD</span>
     <div class="nav-links">
       <a href="#resume">Resume</a>
-      <a href="#projects">Projects</a>
+      <a href="javascript:void(0)" onclick="scrollToSection('projects')">Projects</a>
       <a href="#repos">GitHub</a>
     </div>
   </div>
@@ -653,13 +670,13 @@
       <span class="tag tag-mauve">Multimodal ML</span>
     </div>
     <div class="hero-links">
-      <a href="mailto:cyracaid@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg></a>
+      <a href="mailto:cyracaid@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg></a>
       <span class="sep">·</span>
-      <a href="https://linkedin.com/in/cyrad" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      <a href="https://linkedin.com/in/cyrad" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
       <span class="sep">·</span>
-      <a href="https://github.com/cyracaid" aria-label="GitHub"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
+      <a href="https://github.com/cyracaid" aria-label="GitHub"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
       <span class="sep">·</span>
-      <a href="https://scholar.google.com/citations?user=k2axAvQAAAAJ&amp;hl=en" aria-label="Google Scholar"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg></a>
+      <a href="https://scholar.google.com/citations?user=k2axAvQAAAAJ&amp;hl=en" aria-label="Google Scholar"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg></a>
     </div>
     <div class="hero-summary lang-content active" data-lang="en">
       Statistics &amp; Philosophy @ Yonsei. Building LLM applications, multimodal ML pipelines, and agentic systems. Interested in AI &#x2715; Crypto infrastructure and AI &#x2715; Clinical Neuroscience.
@@ -693,16 +710,15 @@
         <div class="section-header"><span class="section-title">Experience</span><div class="section-rule"></div></div>
         <div class="entry"><div class="entry-header"><span class="entry-org">Sanhua Holding Group</span><span class="entry-date">Dec 2025 &ndash; Mar 2026</span></div><div class="entry-role">AI Engineer Intern &middot; Digital AI Division &middot; Hangzhou</div><ul class="entry-bullets"><li>Integrated dual LLM APIs (OpenAI + DeepSeek) for internal knowledge Q&amp;A prototype; designed prompt templates and response parsing workflows</li><li>Cleaned ~10K equipment logs and supply chain records with Python/pandas for downstream AI/ML pipelines</li></ul></div>
         <div class="entry"><div class="entry-header"><span class="entry-org">Penn Medicine &middot; University of Pennsylvania</span><span class="entry-date">Nov 2025 &ndash; Mar 2026</span></div><div class="entry-role">Research Assistant &mdash; AI4ClinicalPsychology Lab</div><ul class="entry-bullets"><li>Built multimodal ML pipeline: video &rarr; feature extraction (MediaPipe/OpenSMILE) &rarr; emotion classification &rarr; LLM-based therapist evaluation; automated 3,000+ video samples</li><li>Conducted meta-analysis of 20+ clinical studies using Covidence to identify treatment efficacy moderators</li></ul></div>
-        <div class="entry"><div class="entry-header"><span class="entry-org">Stanford Psychophysiology Lab</span><span class="entry-date">Sep 2025 &ndash; Present</span></div><div class="entry-role">Research Assistant</div><ul class="entry-bullets"><li>Engineered 4-layer auditable R pipeline processing 10K+ participants, extracting 7 core sleep behavior metrics</li><li>Developed three-stage parsing framework (decision tree + temporal correction) resolving noisy free-text and timestamp anomalies</li></ul></div>
+        <div class="entry"><div class="entry-header"><span class="entry-org">Stanford Psychophysiology Lab</span><span class="entry-date">Sep 2025 &ndash; Present</span></div><div class="entry-role">Research Assistant · <a href="https://github.com/cyracaid/EMA-Sleep-Diary-Data-Cleaning-Pipeline" target="_blank" class="repo-badge">EMA-Sleep-Diary-Data-Cleaning-Pipeline ↗</a></div><ul class="entry-bullets"><li>Engineered 4-layer auditable R pipeline processing 10K+ participants, extracting 7 core sleep behavior metrics</li><li>Developed three-stage parsing framework (decision tree + temporal correction) resolving noisy free-text and timestamp anomalies</li></ul></div>
         <div class="entry"><div class="entry-header"><span class="entry-org">Zhejiang Univ. of Sci &amp; Tech</span><span class="entry-date">Mar 2024 &ndash; Mar 2026</span></div><div class="entry-role">Research Technician &middot; Social Psych Lab</div><ul class="entry-bullets"><li>Built analysis pipeline for 1,070 survey responses; designed PsychoPy experiments on AI trust and decision-making</li><li>Co-authored manuscript submitted to Journal of Applied Social Psychology</li></ul></div>
         <div class="entry"><div class="entry-header"><span class="entry-org">WashU Speech &amp; Hearing Lab</span><span class="entry-date">Jan 2025 &ndash; Present</span></div><div class="entry-role">Research Assistant</div><ul class="entry-bullets"><li>Quantifying lexical difficulty and modeling bilingual phonological permeability to explain cross-linguistic interaction patterns</li></ul></div>
       </div>
 
-      <div class="section" id="projects">
+      <div class="section" data-section="projects">
         <div class="section-header"><span class="section-title">Projects</span><div class="section-rule"></div></div>
         <div class="project-card"><div class="project-name">Multimodal Clinical Emotion Recognition Pipeline</div><div class="project-stack">Python &middot; MediaPipe &middot; OpenSMILE &middot; Py-Feat &middot; LLM Eval Layer</div><div class="project-desc">End-to-end system: raw video &rarr; facial + acoustic feature extraction &rarr; ML classification &rarr; LLM-based evaluation. Automated 3,000+ video assessments for Penn Medicine.</div></div>
         <div class="project-card"><div class="project-name">ClinicalBERT Trauma Text Classification</div><div class="project-stack">HuggingFace &middot; ClinicalBERT &middot; PyTorch</div><div class="project-desc">Fine-tuned ClinicalBERT for clinical trauma text classification achieving F1=0.84. Designed stratified sampling to address class imbalance.</div></div>
-        <div class="project-card"><div class="project-name">Longitudinal Behavioral Data Pipeline &mdash; Stanford</div><div class="project-stack">R &middot; Decision Tree Parsing &middot; Temporal Correction</div><div class="project-desc">Fully reproducible pipeline processing 10K+ participants / 14K+ records. Three-stage framework resolving free-text noise and timestamp anomalies.</div></div>
       </div>
 
       <div class="section">
@@ -716,15 +732,15 @@
         <div class="pub-item"><a href="assets/jasp70063.pdf" target="_blank" class="pub-link"><span class="pub-title">Underestimation of Others' Attitudes Toward AI: Implications for AI Adoption</span></a> &mdash; Third author; <em>Journal of Applied Social Psychology</em></div>
         <div class="pub-item"><a href="assets/bjso12815.pdf" target="_blank" class="pub-link"><span class="pub-title">Perceived Economic Inequality Inhibits Pro-Environmental Engagement</span></a> &mdash; Third author; British J. Social Psychology, 64(2), e12815</div>
         <div class="pub-item"><a href="assets/ABCT2025_CaiDongSubmission3.pdf" target="_blank" class="pub-link"><span class="pub-title">Predicting Next-Day Suicidal Urges via EMA and Passive Sensing</span></a> &mdash; Poster presentation, ABCT 2025 Annual Convention</div>
-        <div class="pub-item"><a href="assets/poster_sin.pdf" target="_blank" class="pub-link"><span class="pub-title">NEURAL FEATURES OF SPEECH-IN-NOISE (SIN) PERCEPTION DEFICITS AFFECTING SOCIAL COOPERATION AMONG COLLEGE STUDENTS: AN FNIRS HYPERSCANNING STUDY</span></a> &mdash; CUHK SURP &middot; Poster presentation</div>
+        <div class="pub-item"><a href="assets/poster_sin.pdf" target="_blank" class="pub-link"><span class="pub-title">NEURAL FEATURES OF SPEECH-IN-NOISE (SIN) PERCEPTION DEFICITS AFFECTING SOCIAL COOPERATION AMONG COLLEGE STUDENTS: AN FNIRS HYPERSCANNING STUDY</span></a> &mdash; Poster presentation, CUHK SURP</div>
       </div>
 
       <div class="section">
         <div class="section-header"><span class="section-title">Activities &amp; Honors</span><div class="section-rule"></div></div>
         <div class="honors-grid">
-          <div class="honor-item"><strong>AYUI</strong> &mdash; Yonsei Undergraduate Immunologists Association</div>
+          <div class="honor-item"><a href="https://www.instagram.com/yonsei.ayui/" target="_blank"><strong>AYUI</strong></a> &mdash; Yonsei Undergraduate Immunologists Association</div>
           <div class="honor-item"><strong>Jinri (진리) Scholarship</strong> &mdash; Yonsei University (awarded twice)</div>
-          <div class="honor-item"><strong>Secret Book Club</strong> &mdash; English literature &amp; wine tasting society</div>
+          <div class="honor-item"><a href="https://www.instagram.com/the_secretbooksociety/" target="_blank"><strong>Secret Book Club</strong></a> &mdash; English literature &amp; wine tasting society</div>
           <div class="honor-item"><strong>PKU Peiwen Cup</strong> &mdash; National 2nd Prize in Literary Writing (2018)</div>
         </div>
       </div>
@@ -736,15 +752,14 @@
         <div class="section-header"><span class="section-title">研究与实践经历</span><div class="section-rule"></div></div>
         <div class="entry"><div class="entry-header"><span class="entry-org">三花控股集团</span><span class="entry-date">2025.12 &ndash; 2026.03</span></div><div class="entry-role">AI 工程实习生 &middot; 数字化AI事业部 &middot; 杭州</div><ul class="entry-bullets"><li>集成 OpenAI + DeepSeek 双 LLM API，设计提示模板与响应解析流程，构建内部知识问答原型系统</li><li>使用 Python/pandas 清洗约 10,000 条设备日志及供应链数据，为下游 AI/ML 管道提供高质量数据集</li></ul></div>
         <div class="entry"><div class="entry-header"><span class="entry-org">宾夕法尼亚大学医学院</span><span class="entry-date">2025.11 &ndash; 2026.03</span></div><div class="entry-role">研究助理 &mdash; AI4ClinicalPsychology Lab</div><ul class="entry-bullets"><li>构建多模态机器学习管道：视频 &rarr; 特征提取（MediaPipe/OpenSMILE）&rarr; 情绪分类 &rarr; 基于 LLM 的治疗质量评估；自动化处理 3,000+ 临床视频样本</li><li>使用 Covidence 对 20+ 临床研究进行元分析，识别治疗效果的关键调节变量</li></ul></div>
-        <div class="entry"><div class="entry-header"><span class="entry-org">斯坦福大学心理生理学实验室</span><span class="entry-date">2025.09 &ndash; 至今</span></div><div class="entry-role">研究助理</div><ul class="entry-bullets"><li>构建四层可审计 R 语言数据管道，处理 10,000+ 参与者数据，提取 7 项核心睡眠行为指标</li><li>开发三阶段解析框架（决策树 + 时间校正算法），解决自由文本噪声和时间戳异常问题</li></ul></div>
+        <div class="entry"><div class="entry-header"><span class="entry-org">斯坦福大学心理生理学实验室</span><span class="entry-date">2025.09 &ndash; 至今</span></div><div class="entry-role">研究助理 · <a href="https://github.com/cyracaid/EMA-Sleep-Diary-Data-Cleaning-Pipeline" target="_blank" class="repo-badge">EMA-Sleep-Diary-Data-Cleaning-Pipeline ↗</a></div><ul class="entry-bullets"><li>构建四层可审计 R 语言数据管道，处理 10,000+ 参与者数据，提取 7 项核心睡眠行为指标</li><li>开发三阶段解析框架（决策树 + 时间校正算法），解决自由文本噪声和时间戳异常问题</li></ul></div>
         <div class="entry"><div class="entry-header"><span class="entry-org">浙江科技大学 &middot; 社会心理学实验室</span><span class="entry-date">2024.03 &ndash; 2026.03</span></div><div class="entry-role">研究技术员</div><ul class="entry-bullets"><li>构建 1,070 份问卷的全分析管道；独立设计 PsychoPy 行为实验，研究 AI 信任与决策机制</li><li>合著论文已提交至 Journal of Applied Social Psychology</li></ul></div>
       </div>
 
-      <div class="section" id="projects">
+      <div class="section" data-section="projects">
         <div class="section-header"><span class="section-title">项目精选</span><div class="section-rule"></div></div>
         <div class="project-card"><div class="project-name">多模态临床情绪识别管道</div><div class="project-stack">Python &middot; MediaPipe &middot; OpenSMILE &middot; Py-Feat &middot; LLM 评估层</div><div class="project-desc">端到端系统：原始视频 &rarr; 面部表情 + 声学特征提取 &rarr; ML 分类 &rarr; LLM 评估。为宾夕法尼亚大学医学院构建自动化 3,000+ 视频评估管道。</div></div>
         <div class="project-card"><div class="project-name">ClinicalBERT 创伤文本分类</div><div class="project-stack">HuggingFace &middot; ClinicalBERT &middot; PyTorch</div><div class="project-desc">微调 ClinicalBERT 实现临床创伤文本分类，F1 达 0.84。设计分层采样解决类别不平衡问题。</div></div>
-        <div class="project-card"><div class="project-name">纵向行为数据管道 &mdash; 斯坦福大学</div><div class="project-stack">R &middot; 决策树解析 &middot; 时间校正算法</div><div class="project-desc">完全可复现数据管道，处理 10,000+ 参与者 / 14,000+ 条记录。三阶段框架解决自由文本噪声和时间戳异常。</div></div>
       </div>
 
       <div class="section">
@@ -758,15 +773,15 @@
         <div class="pub-item"><a href="assets/jasp70063.pdf" target="_blank" class="pub-link"><span class="pub-title">对他人 AI 态度的低估：对 AI 采纳的影响</span></a> &mdash; 第三作者；<em>Journal of Applied Social Psychology</em></div>
         <div class="pub-item"><a href="assets/bjso12815.pdf" target="_blank" class="pub-link"><span class="pub-title">感知经济不平等抑制亲环境行为</span></a> &mdash; 第三作者；British J. Social Psychology, 64(2), e12815</div>
         <div class="pub-item"><a href="assets/ABCT2025_CaiDongSubmission3.pdf" target="_blank" class="pub-link"><span class="pub-title">基于 EMA 与被动感知的次日自杀冲动预测</span></a> &mdash; 海报展示，ABCT 2025 年会</div>
-        <div class="pub-item"><a href="assets/poster_sin.pdf" target="_blank" class="pub-link"><span class="pub-title">噪声下言语感知缺陷影响大学生社会合作：一项 fNIRS 超扫描研究</span></a> &mdash; CUHK SURP &middot; 海报展示</div>
+        <div class="pub-item"><a href="assets/poster_sin.pdf" target="_blank" class="pub-link"><span class="pub-title">噪声下言语感知缺陷影响大学生社会合作：一项 fNIRS 超扫描研究</span></a> &mdash; 海报展示，CUHK SURP</div>
       </div>
 
       <div class="section">
         <div class="section-header"><span class="section-title">活动与荣誉</span><div class="section-rule"></div></div>
         <div class="honors-grid">
-          <div class="honor-item"><strong>AYUI</strong> &mdash; 延世大学本科生免疫学会</div>
+          <div class="honor-item"><a href="https://www.instagram.com/yonsei.ayui/" target="_blank"><strong>AYUI</strong></a> &mdash; 延世大学本科生免疫学会</div>
           <div class="honor-item"><strong>真理（진리）奖学金</strong> &mdash; 延世大学（两次获得）</div>
-          <div class="honor-item"><strong>秘本读书会</strong> &mdash; 英国文学与红酒品鉴社团</div>
+          <div class="honor-item"><a href="https://www.instagram.com/the_secretbooksociety/" target="_blank"><strong>秘本读书会</strong></a> &mdash; 英国文学与红酒品鉴社团</div>
           <div class="honor-item"><strong>北京大学培文杯</strong> &mdash; 文学写作全国二等奖（2018）</div>
         </div>
       </div>
@@ -778,7 +793,7 @@
         <div class="section-header"><span class="section-title">경력</span><div class="section-rule"></div></div>
         <div class="entry"><div class="entry-header"><span class="entry-org">Sanhua Holding Group (삼화홀딩스)</span><span class="entry-date">2025.12 &ndash; 2026.03</span></div><div class="entry-role">AI 엔지니어 인턴 &middot; 디지털AI사업부 &middot; 항저우</div><ul class="entry-bullets"><li>OpenAI + DeepSeek 듀얼 LLM API 통합하여 내부 지식 QA 프로토타입 구축; 프롬프트 템플릿 및 응답 파싱 워크플로 설계</li><li>Python/pandas로 약 10,000건의 장비 로그 및 공급망 데이터 정제하여 AI/ML 파이프라인에 공급</li></ul></div>
         <div class="entry"><div class="entry-header"><span class="entry-org">펜 의과대학 &middot; University of Pennsylvania</span><span class="entry-date">2025.11 &ndash; 2026.03</span></div><div class="entry-role">연구보조원 &mdash; AI4ClinicalPsychology Lab</div><ul class="entry-bullets"><li>멀티모달 ML 파이프라인 구축: 비디오 &rarr; 특징 추출(MediaPipe/OpenSMILE) &rarr; 감정 분류 &rarr; LLM 기반 치료 평가; 3,000+ 비디오 샘플 자동화</li><li>Covidence를 활용한 20+ 임상 연구 메타분석을 통해 치료 효과 조절 변수 식별</li></ul></div>
-        <div class="entry"><div class="entry-header"><span class="entry-org">스탠포드 정신생리학 연구소</span><span class="entry-date">2025.09 &ndash; 현재</span></div><div class="entry-role">연구보조원</div><ul class="entry-bullets"><li>4계층 감사 가능한 R 파이프라인 구축, 10,000+ 참가자 데이터 처리, 7개 핵심 수면 행동 지표 추출</li><li>3단계 파싱 프레임워크(의사결정나무 + 시간 보정) 개발로 자유 텍스트 노이즈 및 타임스탬프 이상 해결</li></ul></div>
+        <div class="entry"><div class="entry-header"><span class="entry-org">스탠포드 정신생리학 연구소</span><span class="entry-date">2025.09 &ndash; 현재</span></div><div class="entry-role">연구보조원 · <a href="https://github.com/cyracaid/EMA-Sleep-Diary-Data-Cleaning-Pipeline" target="_blank" class="repo-badge">EMA-Sleep-Diary-Data-Cleaning-Pipeline ↗</a></div><ul class="entry-bullets"><li>4계층 감사 가능한 R 파이프라인 구축, 10,000+ 참가자 데이터 처리, 7개 핵심 수면 행동 지표 추출</li><li>3단계 파싱 프레임워크(의사결정나무 + 시간 보정) 개발로 자유 텍스트 노이즈 및 타임스탬프 이상 해결</li></ul></div>
         <div class="entry"><div class="entry-header"><span class="entry-org">절강과학기술대학교 &middot; 사회심리학연구소</span><span class="entry-date">2024.03 &ndash; 2026.03</span></div><div class="entry-role">연구 기술원</div><ul class="entry-bullets"><li>1,070건 설문 응답 분석 파이프라인 구축; AI 신뢰도 및 의사결정 연구를 위한 PsychoPy 실험 설계</li><li>공동 저술 논문 Journal of Applied Social Psychology에 제출</li></ul></div>
         <div class="entry"><div class="entry-header"><span class="entry-org">WashU 언어청각연구소</span><span class="entry-date">2025.01 &ndash; 현재</span></div><div class="entry-role">연구보조원</div><ul class="entry-bullets"><li>어휘 난이도 정량화 및 이중언어 음운 투과성 모델링을 통한 교차언어 상호작용 패턴 분석</li></ul></div>
       </div>
@@ -787,7 +802,6 @@
         <div class="section-header"><span class="section-title">프로젝트</span><div class="section-rule"></div></div>
         <div class="project-card"><div class="project-name">멀티모달 임상 감정 인식 파이프라인</div><div class="project-stack">Python &middot; MediaPipe &middot; OpenSMILE &middot; Py-Feat &middot; LLM 평가 레이어</div><div class="project-desc">엔드투엔드 시스템: 원본 비디오 &rarr; 얼굴 표정 및 음향 특징 추출 &rarr; ML 분류 &rarr; LLM 기반 평가. Penn Medicine에서 3,000+ 비디오 평가 자동화.</div></div>
         <div class="project-card"><div class="project-name">ClinicalBERT 외상 텍스트 분류</div><div class="project-stack">HuggingFace &middot; ClinicalBERT &middot; PyTorch</div><div class="project-desc">ClinicalBERT 미세조정으로 임상 외상 텍스트 분류, F1=0.84 달성. 클래스 불균형 해결을 위한 계층적 샘플링 설계.</div></div>
-        <div class="project-card"><div class="project-name">종단적 행동 데이터 파이프라인 &mdash; 스탠포드</div><div class="project-stack">R &middot; 의사결정나무 파싱 &middot; 시간 보정 알고리즘</div><div class="project-desc">완전 재현 가능한 파이프라인, 10,000+ 참가자 / 14,000+ 레코드 처리. 자유 텍스트 노이즈 및 타임스탬프 이상 해결.</div></div>
       </div>
 
       <div class="section">
@@ -801,15 +815,15 @@
         <div class="pub-item"><a href="assets/jasp70063.pdf" target="_blank" class="pub-link"><span class="pub-title">타인의 AI 태도에 대한 과소평가: AI 도입에 대한 함의</span></a> &mdash; 제3저자; <em>Journal of Applied Social Psychology</em></div>
         <div class="pub-item"><a href="assets/bjso12815.pdf" target="_blank" class="pub-link"><span class="pub-title">인지된 경제적 불평등이 친환경 행동을 저해한다</span></a> &mdash; 제3저자; British J. Social Psychology, 64(2), e12815</div>
         <div class="pub-item"><a href="assets/ABCT2025_CaiDongSubmission3.pdf" target="_blank" class="pub-link"><span class="pub-title">EMA 및 패시브 센싱을 활용한 다음 날 자살 충동 예측</span></a> &mdash; 포스터 발표, ABCT 2025 학술대회</div>
-        <div class="pub-item"><a href="assets/poster_sin.pdf" target="_blank" class="pub-link"><span class="pub-title">잡음하에서의 언어인식 결함이 대학생 사회협력에 미치는 영향: fNIRS 초스캐닝 연구</span></a> &mdash; CUHK SURP &middot; 포스터 발표</div>
+        <div class="pub-item"><a href="assets/poster_sin.pdf" target="_blank" class="pub-link"><span class="pub-title">잡음하에서의 언어인식 결함이 대학생 사회협력에 미치는 영향: fNIRS 초스캐닝 연구</span></a> &mdash; 포스터 발표, CUHK SURP</div>
       </div>
 
       <div class="section">
         <div class="section-header"><span class="section-title">활동 및 수상</span><div class="section-rule"></div></div>
         <div class="honors-grid">
-          <div class="honor-item"><strong>AYUI</strong> &mdash; 연세대학교 학부 면역학회</div>
+          <div class="honor-item"><a href="https://www.instagram.com/yonsei.ayui/" target="_blank"><strong>AYUI</strong></a> &mdash; 연세대학교 학부 면역학회</div>
           <div class="honor-item"><strong>진리 장학금</strong> &mdash; 연세대학교 (2회 수혜)</div>
-          <div class="honor-item"><strong>The Secret Book Society</strong> &mdash; 영문학 &amp; 와인 동아리</div>
+          <div class="honor-item"><a href="https://www.instagram.com/the_secretbooksociety/" target="_blank"><strong>The Secret Book Society</strong></a> &mdash; 영문학 &amp; 와인 동아리</div>
           <div class="honor-item"><strong>북경대학교 배문컵</strong> &mdash; 문학창작 전국 2등상 (2018)</div>
         </div>
       </div>
@@ -837,6 +851,12 @@ function switchLang(lang) {
     btn.classList.toggle('active', btn.id === 'lang-' + lang);
   });
   document.documentElement.lang = lang === 'cn' ? 'zh-CN' : lang === 'ko' ? 'ko' : 'en';
+}
+
+function scrollToSection(name) {
+  const active = document.querySelector('.lang-content.active');
+  const section = active.querySelector(`[data-section="${name}"]`);
+  if (section) section.scrollIntoView({ behavior: 'smooth' });
 }
 
 const LANG_COLORS = {
