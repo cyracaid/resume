@@ -1,0 +1,247 @@
+# =============================================================================
+# Profile: Cai Dong (董猜 / Cyra Cai Dong)
+# Last updated: 2026-05-08
+# =============================================================================
+
+personal_info:
+  name_en: "Cai Dong"
+  name_en_alt: "Cyra Dong"
+  name_cn: "董猜"
+  pronouns: "she/they"
+  email: "cyracaid@gmail.com"
+  phone_us: "+1 314-537-0393"
+  phone_kr: "+82 10-7989-5862"
+  phone_cn: "+86 153-4588-0448"
+  wechat: "dongcaicak"
+  linkedin: "https://www.linkedin.com/in/cyrad"
+  github: "https://github.com/cyracaid"
+  location_preference: "Asia / Global"
+  nationality: "Chinese"
+  summary_en: >
+    Interdisciplinary researcher with a strong foundation in behavioral science,
+    linguistics, and data analysis. Experienced in cleaning and structuring
+    complex real-world data, building LLM-based multimodal evaluation frameworks,
+    and translating technical findings into actionable insights for non-technical
+    stakeholders. Multilingual communicator fluent in Mandarin, English, Korean,
+    and Japanese.
+  summary_cn: >
+    跨学科分析师，具备行为科学、语言学及数据分析的坚实基础。拥有复杂真实世界数据清洗与结构化经验，
+    擅长开发基于大语言模型（LLM）的多模态评估框架，并能将技术性发现转化为可执行洞察以支持非技术决策者。
+    跨文化沟通能力强，熟悉中文、韩文、英文及日文环境。
+
+education:
+  - institution: "Yonsei University"
+    location: "Seoul, South Korea"
+    degree: "Dual BA"
+    majors:
+      - "Philosophy"
+      - "English Language and Literature"
+    minor: "Applied Statistics & Business Science (double major track)"
+    period: "2023.3 – 2024.12"
+    gpa: "3.89/4.3"
+    gpa_percent: "96.5/100"
+    courses:
+      - "General Biology"
+      - "Linear Algebra"
+
+  - institution: "Washington University in St. Louis"
+    location: "St. Louis, MO, USA"
+    degree: "Exchange Student in Arts and Sciences"
+    period: "2025.1 – 2025.6"
+    gpa: "3.75/4.0"
+    courses:
+      - "Linguistics"
+      - "Statistics"
+
+  - institution: "MGH Institute of Health Professions"
+    location: "Boston, MA, USA (Online)"
+    degree: "Online Prerequisite Courses for Speech-Language Pathology"
+    period: "2025.5 – 2025.8"
+    gpa: "4.0/4.0"
+    courses:
+      - "Anatomy & Physiology of Speech and Hearing Mechanisms"
+      - "Introduction to Chemistry"
+
+experience:
+  research:
+    - institution: "University of Pennsylvania (Penn Medicine)"
+      location: "Philadelphia, PA (Remote)"
+      role: "Research Assistant"
+      mentor: "Lin Tao, PhD"
+      period: "2025.11 – Ongoing"
+      highlights_en:
+        - "Led LLM-based evaluations of counselors' facilitative interpersonal skills for scalability; reviewed and fine-tuned multimodal mental health AI tools."
+        - "Built multimodal emotion recognition pipelines for psychotherapy video/audio to model therapeutic effectiveness (MediaPipe, Py-Feat, OpenSMILE)."
+        - "Conducted meta-analysis of 20+ clinical studies using Covidence to identify efficacy factors."
+      highlights_cn:
+        - "设计基于LLM的多模态评估流水线，评估文本、音频及视听场景下的情绪传达"
+        - "将定性情绪线索与定量指标结合，实现人际互动的可扩展分析"
+        - "应用于创伤相关对话场景，展示实验室之外的实际应用价值"
+
+    - institution: "Stanford University"
+      location: "Stanford, CA (Remote)"
+      role: "Research Assistant, Stanford Psychophysiology Lab"
+      mentor: "James Gross, PhD; Maia Ten Brink, Postdoc"
+      period: "2025.9 – Ongoing"
+      highlights_en:
+        - "Built R scripts to resolve a 3-year data integrity issue, correcting >10,000 erroneous EMA/sleep/activity records and enabling longitudinal analyses."
+        - "Reviewed interoception-emotion literature to inform hypotheses and experimental design."
+      highlights_cn:
+        - "清洗并标准化3+年纵向睡眠数据，解决时间格式混乱、缺失区间及记录错误等系统性数据完整性问题"
+        - "使用R构建可复现的数据清洗与验证流水线，显著提升数据可用性，支持后续统计分析"
+
+    - institution: "Washington University in St. Louis"
+      location: "St. Louis, MO"
+      role: "Research Assistant, Speech & Hearing Lab"
+      mentor: "Mitchell Sommers, PhD; Joe Barcroft, PhD"
+      period: "2025.1 – Ongoing"
+      highlights_en:
+        - "Quantifying lexical difficulty and modeling bilingual phonological permeability to account for cross-linguistic interaction."
+        - "L1 Vocabulary Learning and Multimodal (auditory/visual) Cue Integration."
+
+    - institution: "Zhejiang University of Science and Technology"
+      location: "Hangzhou, China (Remote)"
+      role: "Long-Term Research Assistant, Social Psychology Lab"
+      mentor: "Sijing Chen, PhD"
+      period: "2023.7 – Ongoing"
+      highlights_en:
+        - "Reviewed literature on East Asian mental health, cultural/racial trauma, and identity."
+        - "Designed behavioral + EEG studies and culturally adapted mindfulness interventions."
+        - "Investigated how perceived economic inequality impacts pro-environmental engagement and how perceived AI credibility affects decision-making."
+
+    - institution: "Chinese University of Hong Kong"
+      location: "Hong Kong, China"
+      role: "Research Assistant, Brain and Mind Institute"
+      mentor: "Xin Zhou, PhD"
+      period: "2024.6 – 2024.8"
+      highlights_en:
+        - "Investigated effects of neural fatigue from speech perception in noise on social withdrawal using fNIRS hyperscanning."
+
+  clinical:
+    - institution: "Washington University IDDRC"
+      location: "St. Louis, MO"
+      role: "Clinical Observation (psychotherapy, evaluations, ADOS/testing)"
+      period: "2025.7 – 2025.8"
+
+    - institution: "Artists First"
+      location: "St. Louis, MO"
+      role: "Volunteer Art Therapy Supporter"
+      period: "2025.6 – 2025.7"
+
+    - institution: "Central Institute for the Deaf, Washington University"
+      location: "St. Louis, MO"
+      role: "Clinical Shadowing (toddler language intervention, 25 hrs)"
+      period: "2025.5 – 2025.6"
+
+    - institution: "Beijing Normal University, Dept. of Psychology"
+      location: "Beijing, China"
+      role: "Volunteer Editor, Clinical Psychology Content for Baidu Encyclopedia"
+      period: "2024.6 – 2024.9"
+
+  teaching:
+    - institution: "Central Institute for the Deaf, Washington University"
+      location: "St. Louis, MO"
+      role: "Teacher Aide and Recreation Aide"
+      period: "2025.5 – 2025.6"
+
+    - institution: "World Without Borders"
+      location: "Online / Nepal"
+      role: "Volunteer Teacher"
+      period: "2023.7 – 2023.8"
+
+    - institution: "Independent Rural Support Initiative"
+      location: "China – Korea"
+      role: "Educational Mentor and Financial Sponsor"
+      period: "2021 – 2025"
+
+projects:
+  - title: "Behavioral Sleep Data Analysis Pipeline"
+    institution: "Stanford University"
+    description_en: "Cleaned and standardized 3+ years of longitudinal sleep/EMA data, resolved time-zone inconsistencies, built reproducible R pipeline."
+    description_cn: "清洗并标准化3年纵向睡眠数据，构建可复现R数据处理流水线。"
+
+  - title: "LLM-Based Multimodal Emotion Assessment Framework"
+    institution: "University of Pennsylvania"
+    description_en: "Designed LLM-based multimodal evaluation pipeline for text, audio, and audiovisual emotion communication in therapy contexts."
+    description_cn: "设计基于LLM的多模态情绪评估框架，应用于心理咨询场景。"
+
+  - title: "Cross-Lingual Communication Analysis"
+    institution: "Artists First / Central Institute for the Deaf"
+    description_en: "Applied psychology and behavior analysis in cross-cultural, multilingual teaching environments."
+    description_cn: "在跨文化多语言环境中应用心理学与行为分析于教学与辅导。"
+
+skills:
+  programming:
+    - "Python (TensorFlow, PyTorch)"
+    - "R (data cleaning, statistical analysis)"
+    - "MATLAB"
+    - "PsychoPy"
+    - "Audacity"
+    - "NIRSite"
+    - "Aurora fNIRS"
+  methods:
+    - "Linear Regression, HLM, GLMM, IPA"
+    - "Meta-analysis (Covidence)"
+    - "Data validation and quality control"
+    - "Multimodal data pipelines"
+    - "LLM applications and evaluation"
+  soft:
+    - "Cross-cultural communication"
+    - "Trilingual: EN/KR/CN"
+    - "Structured problem-solving"
+
+publications:
+  - title: "Underestimating Others' Positive Attitude Toward AI Reduces Intentions to Adopt AI in Various Business Contexts"
+    authors: "Huo, Yang, Dong & Chen"
+    journal: "Journal of Applied Social Psychology"
+    year: 2025
+    status: "submitted"
+
+  - title: "Perceived economic inequality inhibits pro-environmental engagement"
+    authors: "Huo, R., Yang, S., Dong, C., Chen, S."
+    journal: "British Journal of Social Psychology, 64(2), e12815"
+    year: 2024
+    doi: "10.1111/bjso.12815"
+    status: "published"
+
+  - title: "Hume's aesthetic thoughts and modern art"
+    authors: "Dong, C."
+    journal: "SHS Web of Conferences, Vol. 174, p. 02022"
+    year: 2023
+    doi: "10.1051/shsconf/202317402022"
+    status: "published"
+
+conference_posters:
+  - title: "Predicting next-day suicidal urges, depression, and PTSD symptoms using EMA and passive sensing of sleep among military service members"
+    authors: "Tao, Wiley, Zhu, Dong, Tang, Taylor, et al."
+    conference: "ABCT Annual Convention"
+    year: 2025
+
+  - title: "Effects of neural fatigue from speech perception in noise on social withdrawal: fNIRS hyperscanning evidence"
+    authors: "Dong & Au"
+    conference: "Brain and Mind Institute, Chinese University of Hong Kong"
+    year: 2024
+
+honors:
+  - name: "Jinri (진리) Merit-Based Tuition Scholarship"
+    institution: "Yonsei University"
+    period: "Two terms"
+  - name: "National Second Prize, Peking University Chinese Literature Competition"
+    year: 2018
+
+languages:
+  - language: "Mandarin Chinese"
+    proficiency: "Native"
+  - language: "English"
+    proficiency: "Working Proficiency"
+    details: "IELTS 8.0 (Speaking 7.5)"
+  - language: "Korean"
+    proficiency: "Working Proficiency"
+    details: "TOPIK Level 6"
+  - language: "Japanese"
+    proficiency: "Daily Communication"
+    details: "JLPT N2"
+
+certifications:
+  - name: "Autism and Neurodiversity in the Childcare Setting"
+    issuer: "CIRCA, University of British Columbia"

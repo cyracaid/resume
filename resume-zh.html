@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>董猜 — 简历</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F7F4EE;
+    --warm-white: #FDFBF8;
+    --ink: #1A1714;
+    --ink-80: #36322E;
+    --ink-50: #7A7671;
+    --ink-30: #B8B4AE;
+    --ink-10: #EAE7E1;
+    --coral: #C4522A;
+    --coral-light: #F5EAE4;
+    --teal: #1A6B5A;
+    --rule: #D8D4CD;
+    --font-body: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "SF Pro Text", "Helvetica Neue", sans-serif;
+    --font-display: "DM Serif Display", "PingFang SC", "Noto Serif SC", serif;
+    --font-mono: "SF Mono", "DM Mono", "JetBrains Mono", monospace;
+  }
+
+  @page { size: A4; margin: 0; }
+
+  html, body {
+    width: 210mm;
+    min-height: 297mm;
+    background: var(--cream);
+    font-family: var(--font-body);
+    color: var(--ink);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 210mm;
+    height: 297mm;
+    overflow: hidden;
+    background: var(--warm-white);
+    display: grid;
+    grid-template-columns: 56mm 1fr;
+  }
+
+  .left {
+    background: var(--cream);
+    padding: 7mm 4.5mm 7mm 7mm;
+    border-right: 0.5px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    gap: 4.5mm;
+  }
+
+  .photo-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1mm;
+  }
+  .photo-wrap img {
+    width: 28mm;
+    height: 28mm;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1.5px solid var(--ink-10);
+  }
+
+  .name-block { padding-bottom: 3mm; border-bottom: 1px solid var(--rule); }
+
+  .name-zh {
+    font-family: var(--font-body);
+    font-size: 18px;
+    font-weight: 550;
+    color: var(--ink);
+    line-height: 1.2;
+    letter-spacing: 0.08em;
+  }
+
+  .name-alt {
+    font-size: 8.5px;
+    font-weight: 350;
+    color: var(--ink-50);
+    margin-top: 1px;
+  }
+
+  .left-section { display: flex; flex-direction: column; gap: 2mm; }
+
+  .left-label {
+    font-size: 6.5px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--coral);
+    margin-bottom: 0.5mm;
+  }
+
+  .contact-item {
+    font-size: 7px;
+    color: var(--ink-50);
+    line-height: 1.5;
+    font-family: var(--font-mono);
+  }
+  .contact-item a { color: var(--ink-50); text-decoration: none; }
+
+  .tag-grid { display: flex; flex-wrap: wrap; gap: 2.5px; }
+  .tag {
+    font-size: 6.5px;
+    font-weight: 500;
+    padding: 2px 5.5px;
+    border-radius: 2.5px;
+    letter-spacing: 0.03em;
+  }
+  .tag-coral { background: var(--coral-light); color: var(--coral); }
+  .tag-teal  { background: #E4F0EC; color: var(--teal); }
+  .tag-warm  { background: var(--ink-10); color: var(--ink-50); }
+
+  .skill-group { margin-bottom: 2.5mm; }
+  .skill-group:last-child { margin-bottom: 0; }
+
+  .skill-cat {
+    font-size: 6.5px;
+    font-weight: 600;
+    color: var(--ink-50);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 1.5px;
+  }
+
+  .skill-list {
+    font-size: 7px;
+    color: var(--ink-80);
+    line-height: 1.55;
+    font-family: var(--font-mono);
+  }
+
+  .lang-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2px;
+  }
+  .lang-name { font-size: 7.5px; color: var(--ink-80); font-weight: 500; }
+  .lang-level { font-size: 7px; color: var(--ink-50); font-family: var(--font-mono); }
+
+  .interests-row {
+    font-size: 7.5px;
+    color: var(--ink-80);
+    line-height: 1.5;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px 6px;
+  }
+  .interest-tag { font-weight: 450; color: var(--ink-50); }
+  .interest-tag::before { content: '· '; color: var(--coral); font-weight: 600; }
+  .interest-tag:first-child::before { content: none; }
+
+  .right {
+    padding: 7mm 7mm 7mm 7mm;
+    display: flex;
+    flex-direction: column;
+    gap: 4.5mm;
+  }
+
+  .headline {
+    padding-bottom: 3.5mm;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .role-title {
+    font-size: 8.5px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--coral);
+    margin-bottom: 2.5px;
+  }
+
+  .summary {
+    font-size: 8px;
+    color: var(--ink-50);
+    line-height: 1.6;
+    font-weight: 350;
+  }
+
+  .section { display: flex; flex-direction: column; gap: 3mm; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 0.5mm;
+  }
+
+  .section-title {
+    font-size: 6.5px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-50);
+  }
+
+  .section-rule { flex: 1; height: 0.5px; background: var(--rule); }
+
+  .entry { margin-bottom: 3mm; }
+  .entry:last-child { margin-bottom: 0; }
+  .entry-header { display: flex; justify-content: space-between; align-items: baseline; }
+  .entry-org { font-size: 8.5px; font-weight: 550; color: var(--ink); letter-spacing: -0.01em; }
+  .entry-date { font-size: 6.5px; color: var(--ink-30); font-family: var(--font-mono); white-space: nowrap; }
+  .entry-role { font-size: 7.5px; color: var(--coral); font-weight: 500; letter-spacing: 0.02em; }
+  .entry-bullets { margin-top: 1.5px; padding-left: 8px; display: flex; flex-direction: column; gap: 1px; }
+  .entry-bullets li {
+    font-size: 7.5px;
+    color: var(--ink-80);
+    line-height: 1.5;
+    list-style: none;
+    position: relative;
+  }
+  .entry-bullets li::before { content: '—'; position: absolute; left: -8px; color: var(--ink-30); font-size: 6.5px; }
+  .highlight { color: var(--coral); font-weight: 500; }
+
+  .project-card {
+    border-left: 1.5px solid var(--coral-light);
+    padding-left: 5.5px;
+    margin-bottom: 2.5mm;
+  }
+  .project-card:last-child { margin-bottom: 0; }
+  .project-name { font-size: 8px; font-weight: 550; color: var(--ink); }
+  .project-stack { font-size: 6.5px; color: var(--teal); font-family: var(--font-mono); margin: 0.5px 0; }
+  .project-desc { font-size: 7.5px; color: var(--ink-80); line-height: 1.5; }
+
+  .edu-entry { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2mm; }
+  .edu-school { font-size: 8.5px; font-weight: 550; color: var(--ink); }
+  .edu-degree { font-size: 7.5px; color: var(--ink-50); margin-top: 0.5px; }
+  .edu-date { font-size: 6.5px; color: var(--ink-30); font-family: var(--font-mono); text-align: right; white-space: nowrap; }
+
+  .pub-item {
+    font-size: 7.2px;
+    color: var(--ink-50);
+    line-height: 1.5;
+    margin-bottom: 2mm;
+    padding-left: 7px;
+    position: relative;
+  }
+  .pub-item::before { content: '▸'; position: absolute; left: 0; color: var(--coral); font-size: 6px; }
+  .pub-title { color: var(--ink-80); font-weight: 500; }
+
+  .honor-item {
+    font-size: 7.5px;
+    color: var(--ink-80);
+    line-height: 1.5;
+    padding-left: 7px;
+    position: relative;
+  }
+  .honor-item::before { content: '—'; position: absolute; left: 0; color: var(--ink-30); font-size: 6.5px; }
+
+  .grid-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2mm 3mm;
+  }
+
+  @media print {
+    html, body { width: 210mm; height: 297mm; }
+    .page { overflow: hidden; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <aside class="left">
+    <div class="photo-wrap">
+      <img src="file:///Users/sloblucyra/Desktop/%E8%91%A3%E7%8C%9C/%E8%AF%81%E4%BB%B6%E7%85%A7%E6%9C%AA%E5%8E%8B%E7%BC%A9.jpg" alt="portrait">
+    </div>
+    <div class="name-block">
+      <div class="name-zh">董猜</div>
+      <div class="name-alt">Cyra Dong · 동채하</div>
+    </div>
+
+    <div class="left-section">
+      <div class="left-label">联系方式</div>
+      <div class="contact-item">cyracaid@gmail.com</div>
+      <div class="contact-item">linkedin.com/in/cyrad</div>
+      <div class="contact-item">github.com/cyracaid</div>
+      <div class="contact-item">首尔 · 远程</div>
+    </div>
+
+    <div class="left-section">
+      <div class="left-label">目标岗位</div>
+      <div class="tag-grid">
+        <span class="tag tag-coral">AI 智能体工程</span>
+        <span class="tag tag-coral">LLM 开发</span>
+        <span class="tag tag-teal">Crypto × AI</span>
+        <span class="tag tag-teal">应用 AI</span>
+        <span class="tag tag-warm">自动化</span>
+        <span class="tag tag-warm">NLP 工程</span>
+      </div>
+    </div>
+
+    <div class="left-section">
+      <div class="left-label">技术栈</div>
+      <div class="skill-group">
+        <div class="skill-cat">编程语言</div>
+        <div class="skill-list">Python · TypeScript · R · SQL</div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-cat">LLM / AI</div>
+        <div class="skill-list">OpenAI · DeepSeek · Claude<br>LangChain · RAG · Embeddings<br>HuggingFace · Transformers</div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-cat">多模态 / ML</div>
+        <div class="skill-list">MediaPipe · OpenSMILE<br>Py-Feat · PyTorch<br>ClinicalBERT · 微调</div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-cat">数据 / 工程</div>
+        <div class="skill-list">pandas · FastAPI<br>PostgreSQL · Firebase · Docker</div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-cat">Crypto / Web3</div>
+        <div class="skill-list">链上数据分析<br>Ethers.js (学习中)<br>DeFi 数据管道</div>
+      </div>
+    </div>
+
+    <div class="left-section">
+      <div class="left-label">语言能力</div>
+      <div class="lang-row"><span class="lang-name">中文</span><span class="lang-level">母语</span></div>
+      <div class="lang-row"><span class="lang-name">한국어</span><span class="lang-level">流利 (TOPIK 6)</span></div>
+      <div class="lang-row"><span class="lang-name">English</span><span class="lang-level">熟练 (IELTS 8.0)</span></div>
+      <div class="lang-row"><span class="lang-name">日本語</span><span class="lang-level">日常会话 (N2)</span></div>
+    </div>
+
+    <div class="left-section">
+      <div class="left-label">个人兴趣</div>
+      <div class="interests-row">
+        <span class="interest-tag">文学</span>
+        <span class="interest-tag">时尚</span>
+        <span class="interest-tag">音乐</span>
+      </div>
+    </div>
+  </aside>
+
+  <main class="right">
+
+    <div class="headline">
+      <div class="role-title">AI 构建者 · LLM 工程师 · 智能体系统</div>
+      <div class="summary">
+        统计与哲学双专业背景 @Yonsei — 专注于 LLM 应用、多模态机器学习及自动化流水线构建。在多个研究机构独立开发过处理万级数据的 AI 系统。对 AI × Crypto 基础设施、链上智能体经济、<strong>AI × 临床神经科学 × Health Tech</strong> 深感兴趣。寻找 2026 暑期实习 — 韩国 / 中国 / 远程。
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-title">工作与研究经历</span>
+        <div class="section-rule"></div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-org">三花控股集团 (Sanhua Holding Group)</span>
+          <span class="entry-date">2025.12 – 2026.3</span>
+        </div>
+        <div class="entry-role">AI 工程师实习生 · 数字 AI 部门 · 杭州</div>
+        <ul class="entry-bullets">
+          <li>对接 OpenAI + DeepSeek 双 LLM API，完成 prompt 模板设计、多轮对话优化与响应解析，落地内部知识问答原型系统</li>
+          <li>使用 Python/pandas 清洗约 1 万条设备日志与供应链记录，构建结构化数据集供下游 AI/ML 模型训练使用</li>
+          <li>调研 agent-based 编程环境与 LLM 辅助自动化工具，输出技术调研报告并面向数字 AI 部门完成 live demo</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-org">宾夕法尼亚大学医学院 (Penn Medicine)</span>
+          <span class="entry-date">2025.11 – 2026.3</span>
+        </div>
+        <div class="entry-role">研究助理 — AI4ClinicalPsychology 实验室</div>
+        <ul class="entry-bullets">
+          <li>独立搭建多模态 ML 流水线：视频输入 → 面部特征提取（MediaPipe）+ 语音声学分析（OpenSMILE/Py-Feat）→ 情绪分类 → LLM 自动评估咨询师互动质量</li>
+          <li>批量自动化处理 3,000+ 临床视频样本，将人工评估流程压缩至约 2 分钟，消除评估瓶颈</li>
+          <li>使用 Covidence 完成 20+ 临床研究 meta-analysis，系统性识别心理治疗效果调节因素</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-org">斯坦福心理生理学实验室</span>
+          <span class="entry-date">2025.9 – 至今</span>
+        </div>
+        <div class="entry-role">研究助理</div>
+        <ul class="entry-bullets">
+          <li>构建 R 语言四层可审计数据架构，处理 10,000+ 参与者数据，提取 7 项核心睡眠行为与情绪指标</li>
+          <li>开发三阶段解析框架（决策树 + 时间校正算法），攻克自由文本噪声与 14,000+ 记录中的时间戳异常</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-org">浙江科技大学 · 社会心理学实验室</span>
+          <span class="entry-date">2024.3 – 2026.3</span>
+        </div>
+        <div class="entry-role">研究技术员</div>
+        <ul class="entry-bullets">
+          <li>构建 1,070 份调查数据全分析流水线；独立设计 PsychoPy 行为实验研究 AI 信任与决策机制</li>
+          <li>合作撰写学术论文《Underestimation of Others' Attitudes Toward AI》，投稿 Journal of Applied Social Psychology</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-org">华盛顿大学 · 言语与听力实验室</span>
+          <span class="entry-date">2025.1 – 至今</span>
+        </div>
+        <div class="entry-role">研究助理 — 导师: Mitchell Sommers / Joe Barcroft</div>
+        <ul class="entry-bullets">
+          <li>量化英语词汇难度并建模双语语音可渗透性，分析跨语言交互模式与 L1 词汇学习中的多模态线索整合</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-org">香港中文大学 · 大脑与认知研究所</span>
+          <span class="entry-date">2024.6 – 2024.8</span>
+        </div>
+        <div class="entry-role">暑期研究助理 — 导师: 周欣 教授</div>
+        <ul class="entry-bullets">
+          <li>利用 fNIRS 超扫描技术研究噪声环境下言语感知神经疲劳及其对社交回避行为的影响机制</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-title">核心项目</span>
+        <div class="section-rule"></div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-name">多模态临床情绪识别流水线 — Penn Medicine</div>
+        <div class="project-stack">Python · MediaPipe · OpenSMILE · Py-Feat · LLM 评估层</div>
+        <div class="project-desc">为 Penn Medicine AI4ClinicalPsychology 实验室构建端到端多模态系统：原始视频 → 面部表情 + 语音声学特征 → ML 分类 → LLM 评估。自动处理 <span class="highlight">3,000+ 临床视频</span>，将人工评估流程从数周压缩至约 2 分钟。</div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-name">ClinicalBERT 临床创伤文本分类 (Fine-tune)</div>
+        <div class="project-stack">HuggingFace · ClinicalBERT · PyTorch · 分层采样</div>
+        <div class="project-desc">微调 ClinicalBERT 预训练模型用于临床心理创伤文本分类，达到 <span class="highlight">F1 = 0.84</span>。设计分层采样策略有效解决类别高度不平衡问题，输出用于下游纵向行为分析。</div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-name">纵向行为数据清洗管道 — 斯坦福实验室</div>
+        <div class="project-stack">R · 决策树解析 · 时间校正算法 · 自动化脚本</div>
+        <div class="project-desc">构建全可复现 R 数据清洗流水线，处理 <span class="highlight">10,000+ 参与者 / 14,000+ 纵向记录</span>。三阶段解析框架攻克自由文本噪声与系统性时间戳异常，支撑军人群体 PTSD/抑郁研究。</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-title">教育背景</span>
+        <div class="section-rule"></div>
+      </div>
+      <div class="edu-entry">
+        <div>
+          <div class="edu-school">延世大学 (Yonsei University)</div>
+          <div class="edu-degree">统计学与数据科学 理学学士 · 哲学 文学学士（双专业）<br>辅修：英语语言学 · GPA: 3.89/4.3</div>
+        </div>
+        <div class="edu-date">2023 – 2027.6（预计毕业）</div>
+      </div>
+      <div class="edu-entry">
+        <div>
+          <div class="edu-school">华盛顿大学圣路易斯 (WashU)</div>
+          <div class="edu-degree">交换项目 · 哲学-神经科学-心理学方向 · GPA: 3.75/4.0</div>
+        </div>
+        <div class="edu-date">2025.1 – 5</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-title">学术发表</span>
+        <div class="section-rule"></div>
+      </div>
+      <div class="pub-item"><span class="pub-title">Underestimation of Others' Attitudes Toward AI: Implications for AI Adoption</span> — third author; <em>Journal of Applied Social Psychology</em></div>
+      <div class="pub-item"><span class="pub-title">Perceived Economic Inequality Inhibits Pro-Environmental Engagement</span> — third author; British J. Social Psychology, 64(2), e12815</div>
+      <div class="pub-item"><span class="pub-title">Predicting Next-Day Suicidal Urges, Depression &amp; PTSD Symptoms Using EMA &amp; Passive Sensing</span> — Poster, ABCT Annual Convention 2025</div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-title">活动与荣誉</span>
+        <div class="section-rule"></div>
+      </div>
+      <div class="grid-2col">
+        <div class="honor-item"><strong>AYUI</strong> — 延世大学本科生免疫学协会</div>
+        <div class="honor-item"><strong>Jinri（진리）奖学金</strong> — 延世大学（两次）</div>
+        <div class="honor-item"><strong>The Secret Book Society</strong> — 英语文学与红酒俱乐部</div>
+        <div class="honor-item"><strong>北京大学培文杯文学写作</strong> — 全国二等奖 (2018)</div>
+      </div>
+    </div>
+
+  </main>
+</div>
+</body>
+</html>

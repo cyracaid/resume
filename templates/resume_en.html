@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ profile.personal_info.name_en }} - Resume</title>
+<link rel="stylesheet" href="../css/resume.css">
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, Helvetica, sans-serif; }
+</style>
+</head>
+<body>
+<div class="page">
+  
+  <div class="header">
+    <div class="name">{{ profile.personal_info.name_en }}</div>
+    <div class="contact-line">
+      <span>{{ profile.personal_info.email }}</span>
+      <span class="sep">|</span>
+      <span>{{ profile.personal_info.phone_us }}</span>
+      <span class="sep">|</span>
+      <span>{{ profile.personal_info.linkedin }}</span>
+      <span class="sep">|</span>
+      <span>{{ profile.personal_info.github }}</span>
+    </div>
+  </div>
+
+
+
+  {% if optimized_content and optimized_content.summary %}
+  <div class="section">
+    <div class="section-title">Professional Summary</div>
+    <p class="summary-text">{{ optimized_content.summary }}</p>
+  </div>
+  {% elif profile.personal_info.summary_en %}
+  <div class="section">
+    <div class="section-title">Professional Summary</div>
+    <p class="summary-text">{{ profile.personal_info.summary_en }}</p>
+  </div>
+  {% endif %}
+
+  
+  <div class="section">
+    <div class="section-title">Education</div>
+    {% for edu in profile.education %}
+    <div class="entry no-break">
+      <div class="entry-header">
+        <span class="entry-left">
+          <span class="entry-institution">{{ edu.institution }}</span>
+          <span class="entry-degree"> — {{ edu.degree }}{% if edu.majors %}, {{ edu.majors | join(' & ') }}{% endif %}</span>
+        </span>
+        <span class="entry-right">{{ edu.location }}</span>
+      </div>
+      <div class="entry-date">{{ edu.period }}</div>
+      {% if edu.gpa %}<div class="entry-detail">GPA: {{ edu.gpa }}{% if edu.gpa_percent %} ({{ edu.gpa_percent }}){% endif %}</div>{% endif %}
+      {% if optimized_content and optimized_content.education and optimized_content.education[loop.index0] %}
+      <ul class="bullet-list">
+        {% for item in optimized_content.education[loop.index0] %}
+        <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+      {% elif edu.courses %}
+      <div class="entry-detail">Relevant Coursework: {{ edu.courses | join(', ') }}</div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+
+  
+  {% if profile.experience and profile.experience.teaching %}
+  <div class="section">
+    <div class="section-title">Teaching Experience</div>
+    {% for exp in profile.experience.teaching %}
+    <div class="entry no-break">
+      <div class="entry-header">
+        <span class="entry-left">
+          <span class="entry-institution">{{ exp.institution }}</span>
+          <span class="entry-role"> — {{ exp.role }}</span>
+        </span>
+        <span class="entry-right">{{ exp.location }}</span>
+      </div>
+      <div class="entry-sub">{{ exp.period }}</div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if profile.experience and profile.experience.clinical %}
+  <div class="section">
+    <div class="section-title">Clinical Experience</div>
+    {% for exp in profile.experience.clinical %}
+    <div class="entry no-break">
+      <div class="entry-header">
+        <span class="entry-left">
+          <span class="entry-institution">{{ exp.institution }}</span>
+          <span class="entry-role"> — {{ exp.role }}</span>
+        </span>
+        <span class="entry-right">{{ exp.period }}</span>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if profile.experience and profile.experience.research %}
+  <div class="section">
+    <div class="section-title">Research Experience</div>
+    {% for exp in profile.experience.research %}
+    <div class="entry no-break">
+      <div class="entry-header">
+        <span class="entry-left">
+          <span class="entry-institution">{{ exp.institution }}</span>
+          <span class="entry-role"> — {{ exp.role }}</span>
+        </span>
+        <span class="entry-right">{{ exp.location }}</span>
+      </div>
+      <div class="entry-sub">{{ exp.period }}{% if exp.mentor %} | Mentor: {{ exp.mentor }}{% endif %}</div>
+      {% set bullets = optimized_content.experience.research[loop.index0].highlights if optimized_content and optimized_content.experience and optimized_content.experience.research and optimized_content.experience.research[loop.index0] and optimized_content.experience.research[loop.index0].highlights else exp.highlights_en %}
+      <ul class="bullet-list">
+        {% for item in bullets %}
+        <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  
+  <div class="section">
+    <div class="section-title">Skills</div>
+    <div class="skills-block">
+      {% for category, items in profile.skills.items() %}
+      <div class="skill-line"><span class="skill-cat">{{ category | capitalize }}:</span> {{ items | join(', ') }}</div>
+      {% endfor %}
+    </div>
+  </div>
+
+  
+  {% if profile.projects %}
+  <div class="section">
+    <div class="section-title">Projects</div>
+    {% for proj in profile.projects %}
+    <div class="entry no-break">
+      <div class="entry-header">
+        <span class="entry-left">
+          <span class="entry-institution">{{ proj.title }}</span>
+        </span>
+        <span class="entry-right">{{ proj.institution }}</span>
+      </div>
+      <div class="entry-detail">{{ proj.description_en }}</div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if profile.honors %}
+  <div class="section">
+    <div class="section-title">Honors &amp; Awards</div>
+    {% for h in profile.honors %}
+    <div class="entry no-break">
+      <span class="entry-institution">{{ h.name }}</span>
+      {% if h.institution %} — {{ h.institution }}{% endif %}
+      {% if h.period %} ({{ h.period }}){% elif h.year %} ({{ h.year }}){% endif %}
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if profile.certifications %}
+  <div class="section">
+    <div class="section-title">Certifications</div>
+    {% for c in profile.certifications %}
+    <div class="entry no-break">
+      {{ c.name }}{% if c.issuer %} — {{ c.issuer }}{% endif %}
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if profile.conference_posters %}
+  <div class="section">
+    <div class="section-title">Conference Posters</div>
+    {% for p in profile.conference_posters %}
+    <div class="entry no-break">
+      {{ p.title }} — {{ p.conference }} ({{ p.year }})
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if profile.publications %}
+  <div class="section">
+    <div class="section-title">Publications</div>
+    {% for pub in profile.publications %}
+    <div class="entry pub-entry no-break">
+      <span class="pub-authors">{{ pub.authors }}</span>
+      <span class="pub-year">({{ pub.year }}).</span>
+      <span class="pub-title">"{{ pub.title }}."</span>
+      <span class="pub-journal">{{ pub.journal }}.</span>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  
+  {% if profile.languages %}
+  <div class="section">
+    <div class="section-title">Languages</div>
+    <div class="skills-block">
+      {% for lang in profile.languages %}
+      <div class="skill-line">{{ lang.language }} — {{ lang.proficiency }}{% if lang.details %} ({{ lang.details }}){% endif %}</div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+</div>
+</body>
+</html>

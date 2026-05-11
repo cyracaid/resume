@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyra Dong — Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F7F4EE;
+    --warm-white: #FDFBF8;
+    --ink: #1A1714;
+    --ink-80: #2E2B27;
+    --ink-50: #7A7671;
+    --ink-30: #B8B4AE;
+    --ink-10: #EAE7E1;
+    --coral: #C4522A;
+    --coral-light: #F5EAE4;
+    --teal: #1A6B5A;
+    --teal-light: #E4F0EC;
+    --gold: #8A6A20;
+    --rule: #D8D4CD;
+  }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  html, body {
+    width: 210mm;
+    min-height: 297mm;
+    background: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ink);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    background: var(--warm-white);
+    display: grid;
+    grid-template-columns: 62mm 1fr;
+  }
+
+  /* ===== LEFT COLUMN ===== */
+  .left {
+    background: var(--cream);
+    padding: 10mm 6mm 10mm 8mm;
+    border-right: 0.5px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    gap: 7mm;
+  }
+
+  .name-block {
+    padding-bottom: 6mm;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .name-en {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .name-zh {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--ink-50);
+    letter-spacing: 0.08em;
+    margin-top: 2px;
+  }
+
+  .name-kr {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--ink-30);
+    letter-spacing: 0.05em;
+    margin-top: 1px;
+  }
+
+  .left-section { display: flex; flex-direction: column; gap: 3mm; }
+
+  .left-label {
+    font-size: 7.5px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--coral);
+    margin-bottom: 1mm;
+  }
+
+  .contact-item {
+    font-size: 8.5px;
+    color: var(--ink-50);
+    line-height: 1.6;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .contact-item a {
+    color: var(--ink-50);
+    text-decoration: none;
+  }
+
+  .tag-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+  }
+
+  .tag {
+    font-size: 7.5px;
+    font-weight: 500;
+    padding: 2px 6px;
+    border-radius: 3px;
+    letter-spacing: 0.04em;
+  }
+
+  .tag-coral { background: var(--coral-light); color: var(--coral); }
+  .tag-teal  { background: var(--teal-light);  color: var(--teal);  }
+  .tag-warm  { background: var(--ink-10); color: var(--ink-50); }
+
+  .skill-group { margin-bottom: 3mm; }
+
+  .skill-cat {
+    font-size: 7.5px;
+    font-weight: 500;
+    color: var(--ink-50);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+
+  .skill-list {
+    font-size: 8px;
+    color: var(--ink-80);
+    line-height: 1.65;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .lang-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3px;
+  }
+
+  .lang-name { font-size: 8.5px; color: var(--ink-80); font-weight: 500; }
+  .lang-level {
+    font-size: 7.5px;
+    color: var(--ink-50);
+    font-family: 'DM Mono', monospace;
+  }
+
+  /* ===== RIGHT COLUMN ===== */
+  .right {
+    padding: 10mm 9mm 10mm 8mm;
+    display: flex;
+    flex-direction: column;
+    gap: 6mm;
+  }
+
+  .headline {
+    padding-bottom: 5mm;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .role-title {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--coral);
+    margin-bottom: 3px;
+  }
+
+  .summary {
+    font-size: 9px;
+    color: var(--ink-50);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .section { display: flex; flex-direction: column; gap: 3.5mm; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 1mm;
+  }
+
+  .section-title {
+    font-size: 7.5px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-50);
+  }
+
+  .section-rule {
+    flex: 1;
+    height: 0.5px;
+    background: var(--rule);
+  }
+
+  /* EXPERIENCE + PROJECT ENTRIES */
+  .entry { display: flex; flex-direction: column; gap: 2px; margin-bottom: 3mm; }
+
+  .entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .entry-org {
+    font-size: 9.5px;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+
+  .entry-date {
+    font-size: 7.5px;
+    color: var(--ink-30);
+    font-family: 'DM Mono', monospace;
+    white-space: nowrap;
+  }
+
+  .entry-role {
+    font-size: 8px;
+    color: var(--coral);
+    font-weight: 500;
+    letter-spacing: 0.03em;
+  }
+
+  .entry-sub {
+    font-size: 8px;
+    color: var(--ink-50);
+    font-style: italic;
+  }
+
+  .entry-bullets {
+    margin-top: 2px;
+    padding-left: 9px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5px;
+  }
+
+  .entry-bullets li {
+    font-size: 8px;
+    color: var(--ink-80);
+    line-height: 1.55;
+    list-style: none;
+    position: relative;
+  }
+
+  .entry-bullets li::before {
+    content: '—';
+    position: absolute;
+    left: -9px;
+    color: var(--ink-30);
+    font-size: 7px;
+  }
+
+  .highlight { color: var(--coral); font-weight: 500; }
+
+  /* PROJECT CARD */
+  .project-card {
+    border-left: 2px solid var(--coral-light);
+    padding-left: 6px;
+    margin-bottom: 3mm;
+  }
+
+  .project-name {
+    font-size: 9px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .project-stack {
+    font-size: 7.5px;
+    color: var(--teal);
+    font-family: 'DM Mono', monospace;
+    margin: 1px 0;
+  }
+
+  .project-desc {
+    font-size: 8px;
+    color: var(--ink-80);
+    line-height: 1.55;
+  }
+
+  /* EDU */
+  .edu-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2mm;
+  }
+
+  .edu-school {
+    font-size: 9px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .edu-degree {
+    font-size: 8px;
+    color: var(--ink-50);
+    margin-top: 1px;
+  }
+
+  .edu-date {
+    font-size: 7.5px;
+    color: var(--ink-30);
+    font-family: 'DM Mono', monospace;
+    text-align: right;
+  }
+
+  /* PUB */
+  .pub-item {
+    font-size: 7.8px;
+    color: var(--ink-50);
+    line-height: 1.55;
+    margin-bottom: 2mm;
+    padding-left: 8px;
+    position: relative;
+  }
+
+  .pub-item::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--coral);
+    font-size: 7px;
+  }
+
+  .pub-title { color: var(--ink-80); font-weight: 500; }
+
+  /* HONORS */
+  .honor-item {
+    font-size: 8px;
+    color: var(--ink-80);
+    line-height: 1.55;
+    margin-bottom: 1.5mm;
+    padding-left: 8px;
+    position: relative;
+  }
+
+  .honor-item::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--ink-30);
+    font-size: 7px;
+  }
+
+  @media print {
+    html, body { width: 210mm; height: 297mm; }
+    .page { page-break-after: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ═══════ LEFT COLUMN ═══════ -->
+  <aside class="left">
+
+    <div class="name-block">
+      <div class="name-en">Cyra Dong</div>
+      <div class="name-zh">董　猜</div>
+      <div class="name-kr">동채하</div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="left-section">
+      <div class="left-label">Contact</div>
+      <div class="contact-item">cyracaid@gmail.com</div>
+      <div class="contact-item">linkedin.com/in/cyrad</div>
+      <div class="contact-item">Seoul, KR · Remote-Ready</div>
+    </div>
+
+    <!-- TARGETING -->
+    <div class="left-section">
+      <div class="left-label">目标岗位 / 목표 직무</div>
+      <div class="tag-grid">
+        <span class="tag tag-coral">AI Agent Eng</span>
+        <span class="tag tag-coral">LLM Builder</span>
+        <span class="tag tag-teal">Crypto × AI</span>
+        <span class="tag tag-teal">Applied AI</span>
+        <span class="tag tag-warm">Automation</span>
+        <span class="tag tag-warm">NLP Eng</span>
+      </div>
+    </div>
+
+    <!-- TECH STACK -->
+    <div class="left-section">
+      <div class="left-label">Tech Stack</div>
+
+      <div class="skill-group">
+        <div class="skill-cat">Languages</div>
+        <div class="skill-list">Python · TypeScript · R · SQL</div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-cat">LLM / AI</div>
+        <div class="skill-list">OpenAI API · DeepSeek API<br>Claude API · LangChain<br>RAG · Embeddings<br>HuggingFace · Transformers<br>Prompt Engineering</div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-cat">Multimodal / ML</div>
+        <div class="skill-list">MediaPipe · OpenSMILE<br>Py-Feat · PyTorch<br>ClinicalBERT · fine-tuning</div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-cat">Data / Infra</div>
+        <div class="skill-list">pandas · FastAPI<br>PostgreSQL · Firebase<br>Docker (basic)</div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-cat">Crypto / Web3</div>
+        <div class="skill-list">On-chain analytics<br>Ethers.js (learning)<br>DeFi data pipelines</div>
+      </div>
+    </div>
+
+    <!-- LANGUAGES -->
+    <div class="left-section">
+      <div class="left-label">Languages</div>
+      <div class="lang-row"><span class="lang-name">中文</span><span class="lang-level">Native</span></div>
+      <div class="lang-row"><span class="lang-name">한국어</span><span class="lang-level">Fluent (TOPIK 6)</span></div>
+      <div class="lang-row"><span class="lang-name">English</span><span class="lang-level">Full Professional (IELTS 8.0)</span></div>
+      <div class="lang-row"><span class="lang-name">日本語</span><span class="lang-level">Limited Working (JLPT N2)</span></div>
+    </div>
+
+  </aside>
+
+  <!-- ═══════ RIGHT COLUMN ═══════ -->
+  <main class="right">
+
+    <!-- HEADLINE -->
+    <div class="headline">
+      <div class="role-title">AI Builder · LLM Engineer · Agent Systems</div>
+      <div class="summary">
+        应统与哲学背景 / Applied Stats &amp; Philosophy @Yonsei — 专注 LLM 应用、多模态 ML 与自动化 pipeline 的构建者。在多个研究机构独立开发过处理万级数据的 AI 系统；对 AI × Crypto 基础设施、on-chain 智能体经济和去中心化协作机制抱有浓厚兴趣。Open to 2026 summer internship — KR / CN / Remote.
+      </div>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-title">Experience &nbsp;/&nbsp; 경력</span>
+        <div class="section-rule"></div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-org">Sanhua Holding Group</span>
+          <span class="entry-date">Dec 2025 – Mar 2026</span>
+        </div>
+        <div class="entry-role">AI Engineer Intern · 数字AI部门 · Hangzhou</div>
+        <ul class="entry-bullets">
+          <li>对接双 LLM API（OpenAI + DeepSeek），完成 prompt 模板设计、响应解析与内部知识问答原型落地</li>
+          <li>Python / pandas 清洗 ~10K 设备日志与供应链记录，为 AI/ML 下游任务准备结构化数据集</li>
+          <li>调研 agent-based 编程环境与 LLM 辅助自动化工具，输出实战报告并面向团队展示</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-org">Penn Medicine · UPenn</span>
+          <span class="entry-date">Nov 2025 – Mar 2026</span>
+        </div>
+        <div class="entry-role">Research Assistant — AI4ClinicalPsychology Lab</div>
+        <ul class="entry-bullets">
+          <li>独立搭建多模态 ML pipeline：视频输入 → 特征提取（MediaPipe / OpenSMILE）→ 情绪分类 → LLM 评估层</li>
+          <li>批量自动化处理 3,000+ 视频样本，消除人工评估瓶颈；构建 LLM-based 咨询师互动质量评估框架</li>
+          <li>使用 Covidence 完成 20+ 临床研究 meta-analysis，识别治疗效果调节因素</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-org">Stanford Psychophysiology Lab</span>
+          <span class="entry-date">Sep 2025 – Present</span>
+        </div>
+        <div class="entry-role">Research Assistant</div>
+        <ul class="entry-bullets">
+          <li>R-based 四层可审计数据架构处理 10K+ 参与者，提取 7 项核心睡眠行为指标</li>
+          <li>三阶段解析框架（决策树 + 时间校正算法）攻克高噪声自由文本与时间戳异常</li>
+          <li>参与 interoception-emotion 文献综述以支撑实验假设与方案设计</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-org">WashU Speech &amp; Hearing Lab</span>
+          <span class="entry-date">Jan 2025 – Present</span>
+        </div>
+        <div class="entry-role">Research Assistant</div>
+        <ul class="entry-bullets">
+          <li>量化词汇难度并建模双语语音可渗透性，解释跨语言交互模式</li>
+          <li>研究 L1 词汇学习与多模态（听觉/视觉）线索整合机制</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-org">Zhejiang Univ. of Sci &amp; Tech · Social Psych Lab</span>
+          <span class="entry-date">Mar 2024 – Mar 2026</span>
+        </div>
+        <div class="entry-role">Research Technician</div>
+        <ul class="entry-bullets">
+          <li>构建 1,070 份调查数据端到端分析 pipeline；设计 PsychoPy 行为实验研究 AI 信任与决策机制</li>
+          <li>共同撰写论文投稿 Journal of Applied Social Psychology</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-org">CUHK Brain and Mind Institute</span>
+          <span class="entry-date">Jun 2024 – Aug 2024</span>
+        </div>
+        <div class="entry-role">Research Assistant</div>
+        <ul class="entry-bullets">
+          <li>使用 fNIRS 超扫描研究噪声环境下言语感知神经疲劳及其对社交回避的影响</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SELECTED PROJECTS -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-title">Selected Projects &nbsp;/&nbsp; 核心项目</span>
+        <div class="section-rule"></div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-name">Multimodal Clinical Emotion Recognition Pipeline</div>
+        <div class="project-stack">Python · MediaPipe · OpenSMILE · Py-Feat · LLM Eval Layer</div>
+        <div class="project-desc">
+          为 Penn Medicine 构建端到端多模态处理系统：原始视频 → 面部表情 + 语音声学特征提取 → ML 分类 → LLM 自动评估咨询师互动质量。将 <span class="highlight">3,000+ 视频的手动评估流程自动化</span>，批处理时间压缩至约 2 分钟。
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-name">ClinicalBERT Trauma Classification (Fine-tune)</div>
+        <div class="project-stack">HuggingFace · ClinicalBERT · PyTorch · Python</div>
+        <div class="project-desc">
+          Fine-tune ClinicalBERT 用于临床心理创伤文本分类，最终 F1 = <span class="highlight">0.84</span>。设计分层采样策略解决类别不平衡问题；输出用于下游纵向行为分析。
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-name">Internal LLM Knowledge Q&amp;A Tool — Sanhua Group</div>
+        <div class="project-stack">OpenAI API · DeepSeek API · Python · pandas · Prompt Engineering</div>
+        <div class="project-desc">
+          原型：对接 OpenAI + DeepSeek API，实现企业内部设备日志与供应链数据的智能问答；处理 <span class="highlight">~10,000 条</span>设备记录，设计 prompt 模板与响应解析工作流，向团队完成 live demo。
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-name">Longitudinal Behavioral Data Pipeline — Stanford Psychophysiology Lab</div>
+        <div class="project-stack">R · Decision-tree parsing · Temporal correction algorithms</div>
+        <div class="project-desc">
+          构建全复现 R 数据清洗 pipeline，处理 <span class="highlight">10,000+ 参与者 / 14,000+ 纵向记录</span>；三阶段解析框架攻克自由文本噪声 + 时间戳异常，支撑军人群体 PTSD/抑郁研究。
+        </div>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-title">Education &nbsp;/&nbsp; 학력</span>
+        <div class="section-rule"></div>
+      </div>
+
+      <div class="edu-entry">
+        <div>
+          <div class="edu-school">Yonsei University 연세대학교</div>
+          <div class="edu-degree">B.S. Statistics &amp; Data Science · B.A. Philosophy (double major)<br>Minor: English Linguistics | GPA: 3.89/4.3 (96.5/100)</div>
+        </div>
+        <div class="edu-date">2023.3 – 2024.12<br>Seoul, KR</div>
+      </div>
+
+      <div class="edu-entry">
+        <div>
+          <div class="edu-school">Washington University in St. Louis</div>
+          <div class="edu-degree">Exchange · Philosophy-Neuroscience-Psychology<br>GPA: 3.75/4.0</div>
+        </div>
+        <div class="edu-date">Jan – May 2025<br>St. Louis, US</div>
+      </div>
+    </div>
+
+    <!-- ACTIVITIES -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-title">Activities &nbsp;/&nbsp; 활동</span>
+        <div class="section-rule"></div>
+      </div>
+      <div class="honor-item"><strong>AYUI</strong> (Association of Yonsei Undergraduate Immunologists) — Member</div>
+      <div class="honor-item"><strong>The Secret Book Society</strong> — English Literature and Wine-tasting Club, Member</div>
+    </div>
+
+    <!-- PUBLICATIONS -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-title">Selected Publications &nbsp;/&nbsp; 주요 논문</span>
+        <div class="section-rule"></div>
+      </div>
+
+      <div class="pub-item">
+        <span class="pub-title">Underestimation of Others' Attitudes Toward AI: Implications for AI Adoption</span>
+        — co-author; submitted to Journal of Applied Social Psychology
+      </div>
+      <div class="pub-item">
+        <span class="pub-title">Perceived Economic Inequality Inhibits Pro-Environmental Engagement</span>
+        — British Journal of Social Psychology, 64(2), e12815
+      </div>
+      <div class="pub-item">
+        <span class="pub-title">Predicting Next-Day Suicidal Urges, Depression &amp; PTSD Symptoms Using EMA &amp; Passive Sensing</span>
+        — Poster, ABCT Annual Convention 2025
+      </div>
+      <div class="pub-item">
+        <span class="pub-title">Effects of Neural Fatigue from Speech Perception in Noise on Social Withdrawal</span>
+        — Poster, CUHK Brain and Mind Institute 2024
+      </div>
+      <div class="pub-item">
+        <span class="pub-title">Hume's Aesthetic Thoughts and Modern Art</span>
+        — SHS Web of Conferences, Vol. 174, p. 02022
+      </div>
+    </div>
+
+    <!-- HONORS -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-title">Honors &nbsp;/&nbsp; 수상</span>
+        <div class="section-rule"></div>
+      </div>
+      <div class="honor-item"><strong>Jinri (진리) Merit-Based Scholarship</strong> — Yonsei University (awarded twice)</div>
+      <div class="honor-item"><strong>National Second Prize</strong> — Peking University Chinese Literature Competition (2018)</div>
+    </div>
+
+  </main>
+</div>
+</body>
+</html>

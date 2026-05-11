@@ -1,0 +1,197 @@
+
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-size: 10.5pt;
+  line-height: 1.35;
+  color: #000;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 18mm 16mm 16mm 16mm;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 4mm;
+  padding-bottom: 3mm;
+  border-bottom: 1px solid #333;
+}
+
+.name {
+  font-size: 14pt;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 1.5mm;
+}
+
+.contact-line {
+  font-size: 9pt;
+  color: #444;
+  margin-top: 0.5mm;
+}
+
+.contact-line .sep {
+  color: #999;
+  margin: 0 3mm;
+}
+
+.section {
+  margin-bottom: 0;
+}
+
+.section-title {
+  font-size: 10.5pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 0.5px solid #666;
+  padding-bottom: 0.5mm;
+  margin: 3mm 0 2mm 0;
+}
+
+.entry {
+  margin-bottom: 2mm;
+}
+
+.entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.entry-left {
+  font-weight: 400;
+}
+
+.entry-right {
+  font-size: 9pt;
+  color: #666;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.entry-institution {
+  font-weight: 700;
+}
+
+.entry-degree,
+.entry-role {
+  font-weight: 400;
+  color: #333;
+}
+
+.entry-degree-cn {
+  font-weight: 600;
+  font-size: 10pt;
+}
+
+.entry-date {
+  font-size: 9pt;
+  color: #666;
+  margin: 0.3mm 0;
+}
+
+.entry-detail {
+  font-size: 9pt;
+  color: #555;
+  margin: 0.3mm 0;
+}
+
+.entry-sub {
+  font-size: 9pt;
+  color: #555;
+  margin: 0.3mm 0 0.5mm 0;
+}
+
+.bullet-list {
+  list-style: none;
+  margin: 0.5mm 0 0 0;
+  padding-left: 3mm;
+}
+
+.bullet-list li {
+  position: relative;
+  font-size: 9.5pt;
+  line-height: 1.35;
+  margin-bottom: 0.3mm;
+  padding-left: 0;
+}
+
+.bullet-list li::before {
+  content: "•";
+  position: absolute;
+  left: -3mm;
+  color: #666;
+}
+
+.summary-text {
+  font-size: 9.5pt;
+  line-height: 1.4;
+  color: #222;
+  margin: 0.5mm 0;
+}
+
+.skills-block {
+  margin: 0.5mm 0;
+}
+
+.skill-line {
+  font-size: 9.5pt;
+  line-height: 1.45;
+  margin-bottom: 0.3mm;
+}
+
+.skill-cat {
+  font-weight: 600;
+  display: inline-block;
+  min-width: 70px;
+}
+
+.pub-entry {
+  font-size: 9pt;
+  line-height: 1.35;
+  margin-bottom: 0.5mm;
+}
+
+.pub-authors { font-style: normal; }
+.pub-year { font-style: normal; }
+.pub-title { font-style: italic; }
+.pub-journal { font-style: normal; }
+
+.no-break {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+  }
+  .page {
+    width: 100%;
+    min-height: auto;
+    padding: 18mm 16mm;
+    margin: 0;
+    box-shadow: none;
+  }
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+  .no-break {
+    page-break-inside: avoid;
+  }
+}
